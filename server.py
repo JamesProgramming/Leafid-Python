@@ -49,14 +49,14 @@ def index():
 
     # Get each predction's full category name.
     category_first = (
-        image_info["category"][map_first[0]]["name"]
+        image_info["categories"][map_first[0]]["name"]
         + " "
-        + image_info["category"][map_first[0]]["diseases"][map_first[1]]["name"]
+        + image_info["categories"][map_first[0]]["diseases"][map_first[1]]["name"]
     )
     category_second = (
-        image_info["category"][map_second[0]]["name"]
+        image_info["categories"][map_second[0]]["name"]
         + " "
-        + image_info["category"][map_second[0]]["diseases"][map_second[1]]["name"]
+        + image_info["categories"][map_second[0]]["diseases"][map_second[1]]["name"]
     )
 
     return (
