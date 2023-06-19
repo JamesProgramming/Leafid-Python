@@ -82,6 +82,11 @@ with open(
     model_history = json.load(model_history)
 
 with open(
+    os.path.join(os.path.dirname(__file__), "history_fine_tune.json"), "r"
+) as history_fine_tune:
+    history_fine_tune = json.load(history_fine_tune)
+
+with open(
     os.path.join(os.path.dirname(__file__), "image_info.json"), "r"
 ) as image_info:
     image_info = json.load(image_info)
@@ -99,7 +104,7 @@ def imageStats():
         {
             "status": "success",
             "data": {
-                "training_stats": model_history,
+                "training_stats": {"init": model_history, "tuning": history_fine_tune},
                 "image_stats": image_info,
                 "test_results": test_results,
             },
